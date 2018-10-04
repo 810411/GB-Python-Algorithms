@@ -12,8 +12,7 @@ for num in random_array:
         break
 
 for key, value in enumerate(random_array):
-    if value < 0:
-        if value >= maximum_in_negative:
+    if 0 > value >= maximum_in_negative:
             maximum_in_negative = value
             position = key
 

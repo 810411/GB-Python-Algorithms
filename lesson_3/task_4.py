@@ -8,7 +8,7 @@ random_array = [randint(0, 9) for _ in range(10)]
 main_counter = 0
 answer = 0
 
-for i in range(0, len(random_array)):
+for i in range(len(random_array)):
     slave_counter = 0
     for j in range(0, len(random_array)):
         if random_array[i] == random_array[j]:
