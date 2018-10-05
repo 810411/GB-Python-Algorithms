@@ -1,25 +1,22 @@
 # В массиве случайных целых чисел поменять местами минимальный и максимальный элементы.
-# Абстрагировался, из-за неопределенности по условию, от того что можно поменять один максимальный на один минимальный
-# элемент, поменял все встречающиеся равные максимальному на равные минимальному и наоборот.
 
 from random import randint
 
-random_array = [randint(0, 9) for _ in range(10)]
-maximum = random_array[0]
-minimum = random_array[0]
+SIZE = 10
+array = [randint(-100, 100) for _ in range(SIZE)]
+print(array)
 
-print(random_array)
+# 1 вариант
+idx_min = 0
+idx_max = 0
+for i in range(len(array)):
+    if array[i] < array[idx_min]:
+        idx_min = i
+    elif array[i] > array[idx_max]:
+        idx_max = i
+print(f'Min = {array[idx_min]} в ячейке {idx_min}; Max = {array[idx_max]} в ячейке {idx_max}')
 
-for num in random_array:
-    if num > maximum:
-        maximum = num
-    if num < minimum:
-        minimum = num
-
-for i in range(0, len(random_array)):
-    if random_array[i] == maximum:
-        random_array[i] = minimum
-    elif random_array[i] == minimum:
-        random_array[i] = maximum
-
-print(random_array)
+spam = array[idx_min]
+array[idx_min] = array[idx_max]
+array[idx_max] = spam
+print(array)
