@@ -23,11 +23,6 @@ import cProfile
 #
 # print(sift(1000))
 
-
-# Возможно недопонял условие, но без указанного диапазона поиска в изначальном виде решето не работоспособно, а так как
-# по номеру простого числа не зная этого числа указать диапазон безошибочно затруднительно, решил изменить функцию
-# будем просеивать порциями пока не дойдем до искомого элемента:
-
 def search_with_sift(n):
     non_primes_set = set()
     i = 1
@@ -46,8 +41,12 @@ def search_with_sift(n):
 
 # Timeit:
 # setup = 'from __main__ import search_with_sift'
-# print(timeit.timeit('search_with_sift(100)', setup=setup, number=1000))
+# print(timeit.timeit('search_with_sift(10)', setup=setup, number=100))
+# 0.0008704505418279972
+# print(timeit.timeit('search_with_sift(100)', setup=setup, number=100))
 # 1.4019409488600727
+# print(timeit.timeit('search_with_sift(100)', setup=setup, number=10000))
+# 28.052262289972187
 
 # cProfile:
 # cProfile.run('search_with_sift(100)')
@@ -80,14 +79,15 @@ def prime_by_num(n):
 
 # Timeit:
 # setup = 'from __main__ import prime_by_num'
+# print(timeit.timeit('prime_by_num(10)', setup=setup, number=1000))
+# 0.013382761911209958
 # print(timeit.timeit('prime_by_num(100)', setup=setup, number=1000))
 # 1.0773975393868012
+# print(timeit.timeit('prime_by_num(1000)', setup=setup, number=1000))
+# 175.8952909570996
 
 # cProfile:
 # cProfile.run('prime_by_num(100)')
 # 4 function calls in 0.001 seconds
 # 1    0.001    0.001    0.001    0.001 task_2.py:61(prime_by_num)
 # 1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
-
-# Вывод: за две с лишним тысячи лет вспомогательные средства деятельности человека разумного значительно "поумнели",
-# чего нельзя сказать про самого человека разумного

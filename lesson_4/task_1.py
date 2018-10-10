@@ -45,6 +45,11 @@ def max_from_min_in_matrix_col(matrix_):
 # 1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
 # 101    0.000    0.000    0.000    0.000 {built-in method builtins.len}
 
+# Тенденция сложности:
+# print(timeit.timeit('max_from_min_in_matrix_col(matrix)', setup=setup, number=1000))  0.44095792992707067
+# print(timeit.timeit('max_from_min_in_matrix_col(matrix)', setup=setup, number=10000))  4.455258918796699
+# print(timeit.timeit('max_from_min_in_matrix_col(matrix)', setup=setup, number=100000))  45.16516690448422
+
 
 # И все то же самое для не очень хорошей реализации этой задачи
 
@@ -82,6 +87,4 @@ def dumb_max_from_min_in_matrix_col(matrix_):
 # 1    0.000    0.000    0.001    0.001 {built-in method builtins.exec}
 # 101    0.000    0.000    0.000    0.000 {built-in method builtins.len}
 
-# Вывод: знания и опыт позволяют писать более оптимальный код. Решение предложенное преподавателем выполняет задачу
-# в 1,5 раза быстрее чем решение студента. Изучение алгоритмов и структур данных решает проблему выбора оптимальных
-# конструкций и структур, избегая увеличения сложности.
+
