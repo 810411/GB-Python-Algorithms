@@ -14,6 +14,7 @@ if companyCount <= 1:
 
 for i in range(companyCount):
     companyName = input(f'Введите название предприятия №{i + 1}: ')
+    companyName = f'№{i+1} {companyName}'
     profit = Counter()
     for key in ['I', 'II', 'III', 'IV']:
         value = int(input(f'Введите прибыль за {key} квартал: '))
