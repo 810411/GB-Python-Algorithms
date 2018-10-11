@@ -7,7 +7,7 @@
 
 from collections import OrderedDict, deque
 
-HEX_NUM = '0123456789ABCDEF'
+HEX_NUMS = '0123456789ABCDEF'
 
 first_num = deque((input('Введите первое шестнадцатеричное число: ')).upper())
 second_num = deque((input('Введите второе шестнадцатеричное число: ')).upper())
@@ -16,7 +16,7 @@ second_num = deque((input('Введите второе шестнадцатер�
 def hex_to_decimal(num):
     hex_number = OrderedDict()
 
-    for key, value in enumerate(HEX_NUM):
+    for key, value in enumerate(HEX_NUMS):
         hex_number[value] = key
 
     return sum([hex_number[j] * (16 ** i) for i, j in enumerate(num)])
@@ -25,7 +25,7 @@ def hex_to_decimal(num):
 def decimal_to_hex(num):
     dec_number = OrderedDict()
 
-    for key, value in enumerate(HEX_NUM):
+    for key, value in enumerate(HEX_NUMS):
         dec_number[key] = value
 
     lst = []
