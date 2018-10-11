@@ -12,14 +12,13 @@ if companyCount <= 1:
     print('Недостаточно данных для сравнения')
     exit(1)
 
-for i in range(companyCount):
-    companyName = input(f'Введите название предприятия №{i + 1}: ')
-    companyName = f'№{i+1} {companyName}'
+for i in range(1, companyCount + 1):
+    companyName = input(f'Введите название предприятия №{i}: ')
     profit = Counter()
     for key in ['I', 'II', 'III', 'IV']:
         value = int(input(f'Введите прибыль за {key} квартал: '))
         profit.update({key: value})
-    companies[companyName] = sum(profit.values())
+    companies[f'№{i} {companyName}'] = sum(profit.values())
 
 average = sum(companies.values()) / len(companies)
 companies['average'] = average
