@@ -3,8 +3,7 @@
 # предприятий, чья прибыль выше среднего и отдельно вывести наименования предприятий, чья прибыль ниже среднего.
 # Использовать модуль collections.
 
-import collections
-
+from collections import Counter, OrderedDict
 
 companies = dict()
 
@@ -15,7 +14,7 @@ if companyCount <= 1:
 
 for i in range(companyCount):
     companyName = input(f'Введите название предприятия №{i + 1}: ')
-    profit = collections.Counter()
+    profit = Counter()
     for key in ['I', 'II', 'III', 'IV']:
         value = int(input(f'Введите прибыль за {key} квартал: '))
         profit.update({key: value})
@@ -23,7 +22,7 @@ for i in range(companyCount):
 
 average = sum(companies.values()) / len(companies)
 companies['average'] = average
-companies = collections.OrderedDict(sorted(companies.items(), key=lambda x: x[1], reverse=True))
+companies = OrderedDict(sorted(companies.items(), key=lambda x: x[1], reverse=True))
 
 print('Предприятия, чья прибыль выше среднего: ')
 for key, value in companies.items():
