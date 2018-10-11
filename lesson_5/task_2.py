@@ -9,9 +9,6 @@ from collections import OrderedDict, deque
 
 HEX_NUMS = '0123456789ABCDEF'
 
-first_num = deque((input('Введите первое шестнадцатеричное число: ')).upper())
-second_num = deque((input('Введите второе шестнадцатеричное число: ')).upper())
-
 
 def hex_to_decimal(num):
     hex_number = OrderedDict()
@@ -36,6 +33,9 @@ def decimal_to_hex(num):
 
     return [dec_number[i] for i in lst[::-1]]
 
+
+first_num = deque((input('Введите первое шестнадцатеричное число: ')).upper())
+second_num = deque((input('Введите второе шестнадцатеричное число: ')).upper())
 
 first_num.reverse()
 second_num.reverse()

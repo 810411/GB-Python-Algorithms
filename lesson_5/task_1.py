@@ -7,12 +7,12 @@ from collections import Counter, OrderedDict
 
 companies = dict()
 
-companyCount = int(input('Введите количество предприятий: '))
-if companyCount <= 1:
+company_count = int(input('Введите количество предприятий: '))
+if company_count <= 1:
     print('Недостаточно данных для сравнения')
     exit(1)
 
-for i in range(1, companyCount + 1):
+for i in range(1, company_count + 1):
     companyName = input(f'Введите название предприятия №{i}: ')
     profit = Counter()
     for key in ['I', 'II', 'III', 'IV']:
