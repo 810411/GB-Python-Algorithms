@@ -6,24 +6,24 @@
 from random import randint, choice
 
 
-def quickselect_median(array_):
-    if len(array_) % 2 == 1:
-        return quickselect(array_, len(array_) / 2)
-    else:
-        return 0.5 * (quickselect(array_, len(array_) / 2 - 1) +
-                      quickselect(array_, len(array_) / 2))
+def quickselect_median(sorting_array):
+    # if len(array_) % 2 == 1:
+        return quickselect(sorting_array, len(sorting_array) / 2)
+    # else:
+    #     return 0.5 * (quickselect(array_, len(array_) / 2 - 1) +
+    #                   quickselect(array_, len(array_) / 2))
 
 
-def quickselect(_array, index):
-    if len(_array) == 1:
+def quickselect(sorting_array, index):
+    if len(sorting_array) == 1:
         assert index == 0
-        return _array[0]
+        return sorting_array[0]
 
-    pivot = choice(_array)
+    pivot = choice(sorting_array)
 
-    lows = [i for i in _array if i < pivot]
-    highs = [i for i in _array if i > pivot]
-    pivots = [i for i in _array if i == pivot]
+    lows = [i for i in sorting_array if i < pivot]
+    highs = [i for i in sorting_array if i > pivot]
+    pivots = [i for i in sorting_array if i == pivot]
 
     if index < len(lows):
         return quickselect(lows, index)

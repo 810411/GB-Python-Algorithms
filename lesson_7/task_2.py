@@ -18,15 +18,15 @@ def merge(left_part, right_part):
     return array_
 
 
-def merge_sort(_array):
-    array_len = len(_array)
+def merge_sort(sorting_array):
+    array_len = len(sorting_array)
     if array_len >= 2:
         half = int(array_len / 2)
-        _array = merge(merge_sort(_array[:half]), merge_sort(_array[half:]))
-    return _array
+        sorting_array = merge(merge_sort(sorting_array[:half]), merge_sort(sorting_array[half:]))
+    return sorting_array
 
 
-START, END, LEN = 0, (50 - 1), 10
+START, END, LEN = 0, 50, 10
 
 array = [uniform(START, END) for _ in range(LEN)]
 
