@@ -33,3 +33,4 @@ str_ = (input('Введите строку из строчных букв: ')).l
 all_subs = all_subs_search_in_str(str_)
 for key, value in all_subs.items():
     print(f'{key:<{len(str_)}} {value}')
+print(f'Всего различных подстрок {len(all_subs)}')
